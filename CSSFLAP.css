@@ -1,0 +1,47 @@
+body {
+  background-image: url('Background.png');
+  animation: FlapCity 40s infinite linear;
+}
+canvas {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.animation-bar span {
+  position: absolute;
+  width: 100%;
+  height: 14.75px;
+  right: 0;
+  top: 471px;
+  overflow: hidden;
+  background-color: rgb(178, 255, 89);
+}
+.animation-bar span::after{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  background-size: 100%;
+  background-image: linear-gradient(-45deg,#63dd17 25%,
+                                    transparent 25%,
+                                    transparent 50%,
+                                    #63dd17 50%,
+                                    #63dd17 75%,
+                                    transparent 75%,
+                                    transparent);
+  background-size: 35px 35px;
+  animation: stripe-animation 0.2s infinite linear;
+}
+
+@keyframes stripe-animation {
+  0% {background-position: 0 100%;}
+  100% {background-position: -35px 100%;}
+}
+
+@keyframes FlapCity {
+  0% {background-position: 0px 100%;}
+  100% {background-position: -640px 100%;}
+}
